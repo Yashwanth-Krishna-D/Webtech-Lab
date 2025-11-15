@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Weather Dashboard — Enhanced</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Weather Dashboard</h1>
+      <div class="controls">
+        <input id="cityInput" type="text" placeholder="Enter city name (e.g, Chennai)" aria-label="City name"/>
+        <button id="searchBtn">Search</button>
+        <div class="unit-toggle" role="radiogroup" aria-label="Temperature unit">
+          <button id="unitC" class="unit active" aria-pressed="true">°C</button>
+          <button id="unitF" class="unit" aria-pressed="false">°F</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="message" class="message">Search a city to get current weather.</section>
+    <section id="cardArea"></section>
+  </main>
+
+  <footer class="site-footer container">
+    <small>Data from OpenWeatherMap · Built by Yashwanth Krishna Devendran</small>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
