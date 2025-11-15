@@ -1,0 +1,33 @@
+:root{
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --accent:#0b5fff;
+  --error:#ff6b6b;
+  --muted:#556;
+  --radius:10px;
+  --max-w:760px;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#0b1220}
+.container{max-width:var(--max-w);margin:28px auto;padding:20px}
+header h1{margin:0 0 6px 0;font-size:1.4rem}
+.lead{color:var(--muted);margin:0 0 12px 0}
+form{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 24px rgba(10,20,50,0.06)}
+fieldset{border:0;margin:0 0 12px 0;padding:0}
+label{display:block;margin-top:12px;font-weight:600}
+input[type="text"],input[type="email"],input[type="tel"],input[type="number"],input[type="password"],select,textarea{
+  width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefb;margin-top:6px;font-size:0.95rem;
+}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(11,95,255,0.08);border-color:var(--accent)}
+.error{color:var(--error);font-size:0.9rem;height:20px;margin-top:6px}
+input.invalid,select.invalid,textarea.invalid{border-color:var(--error);box-shadow:0 0 0 3px rgba(255,107,107,0.06)}
+.required{color:var(--error)}
+.checkbox{display:flex;align-items:center;gap:8px;margin-top:12px}
+.form-actions{display:flex;gap:10px;margin-top:18px}
+button{background:var(--accent);color:white;padding:10px 14px;border:none;border-radius:8px;cursor:pointer}
+button.btn-secondary{background:#eef2ff;color:#0b1220}
+#formMessage{margin-top:12px;font-weight:600;color:green}
+.notes{margin-top:18px;background:#fff;padding:12px;border-radius:8px;border:1px solid #f0f6ff}
+.footer{margin-top:18px;text-align:center;color:var(--muted);font-size:0.9rem}
+@media (max-width:520px){.container{padding:12px}}

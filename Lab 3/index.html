@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Event Registration — Form Validation (Lab 3)</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Community Event Signup</h1>
+      <p class="lead">Register for the community meetup. All fields marked <span class="required">*</span> are mandatory.</p>
+    </header>
+
+    <form id="regForm" novalidate>
+      <fieldset>
+        <legend>Personal Details</legend>
+
+        <label for="fullName">Full name <span class="required">*</span></label>
+        <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+        <div class="error" id="err-fullName" aria-live="polite"></div>
+
+        <label for="email">Email <span class="required">*</span></label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+        <div class="error" id="err-email" aria-live="polite"></div>
+
+        <label for="phone">Phone number <span class="required">*</span></label>
+        <input id="phone" name="phone" type="tel" pattern="\d{10}" placeholder="10 digits" required />
+        <div class="error" id="err-phone" aria-live="polite"></div>
+
+        <label for="age">Age <span class="required">*</span></label>
+        <input id="age" name="age" type="number" min="0" max="120" required />
+        <div class="error" id="err-age" aria-live="polite"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Account & Preferences</legend>
+
+        <label for="password">Password <span class="required">*</span></label>
+        <input id="password" name="password" type="password" minlength="8" required />
+        <div class="error" id="err-password" aria-live="polite"></div>
+
+        <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+        <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" required />
+        <div class="error" id="err-confirmPassword" aria-live="polite"></div>
+
+        <label for="eventType">Event Type <span class="required">*</span></label>
+        <select id="eventType" name="eventType" required>
+          <option value="">Select an event</option>
+          <option>Workshop — Web Development</option>
+          <option>Talk — AI & Data Science</option>
+          <option>Networking Session</option>
+        </select>
+        <div class="error" id="err-eventType" aria-live="polite"></div>
+
+        <label for="address">Address (optional)</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+
+        <label class="checkbox">
+          <input id="agree" name="agree" type="checkbox" required />
+          I agree to the event terms and conditions <span class="required">*</span>
+        </label>
+        <div class="error" id="err-agree" aria-live="polite"></div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit">Register</button>
+        <button type="reset" class="btn-secondary">Reset</button>
+      </div>
+
+      <div id="formMessage" role="status" aria-live="polite"></div>
+    </form>
+
+    <section class="notes">
+      <h3>Validation Rules</h3>
+      <ul>
+        <li><strong>Full name:</strong> required, 3–80 characters.</li>
+        <li><strong>Email:</strong> required, RFC-like format validated with regex.</li>
+        <li><strong>Phone:</strong> required, exactly 10 digits (numbers only).</li>
+        <li><strong>Age:</strong> required, must be numeric and at least 18.</li>
+        <li><strong>Password:</strong> required, minimum 8 characters, include letters and numbers.</li>
+        <li><strong>Confirm password:</strong> must match password.</li>
+        <li><strong>Event type:</strong> required.</li>
+        <li><strong>Agree:</strong> required to submit.</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <small>Lab 3 — Form Validation · Yashwanth Krishna Devendran · Reg No: 23011101166</small>
+    </footer>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
